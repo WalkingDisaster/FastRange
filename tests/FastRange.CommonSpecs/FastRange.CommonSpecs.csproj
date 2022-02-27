@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\FastRange\FastRange.csproj" />
+    <ProjectReference Include="..\..\src\FastRange\FastRange.csproj" />
   </ItemGroup>
 
 </Project>

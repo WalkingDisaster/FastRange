@@ -21,10 +21,7 @@ public class InMemoryRangeSearcher<TObject, TIndex> : IRangeSearcher<TObject, TI
     {
         return Task.Run(() =>
         {
-            if (_values.Count == 0)
-            {
-                return (false, false);
-            }
+            if (_values.Count == 0) return (false, false);
 
             var isContiguous = true;
             var hasOverlap = false;
@@ -133,10 +130,7 @@ public class InMemoryRangeSearcher<TObject, TIndex> : IRangeSearcher<TObject, TI
             while (enumerator.MoveNext())
             {
                 var (floor, ceiling, _) = enumerator.Current;
-                if (index.CompareTo(floor) >= 0 && index.CompareTo(ceiling) <= 0)
-                {
-                    result.Add(enumerator.Current);
-                }
+                if (index.CompareTo(floor) >= 0 && index.CompareTo(ceiling) <= 0) result.Add(enumerator.Current);
             }
 
             return result.AsEnumerable();
